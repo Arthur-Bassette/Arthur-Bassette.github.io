@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="portfolio.xsl"?>
 <CV>
   <PersonalInfo>
-    <Name>BASSETTE Arthur</Name>
+    <Name image="moi.jpg" >BASSETTE Arthur</Name>
     <Phone>+33 7 83 05 50 12</Phone>
     <Email>arthur.chancereul@gmail.com</Email>
     <InternshipSearch>
