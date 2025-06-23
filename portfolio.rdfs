@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:cv="http://example.org/cv-schema#">
+
+    <rdfs:Class rdf:about="&cv;Person">
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+        <rdfs:label xml:lang="fr">Personne</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a person described in the CV.</rdfs:comment>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="&cv;Education">
+        <rdfs:label xml:lang="en">Education Entry</rdfs:label>
+        <rdfs:label xml:lang="fr">Parcours Éducatif</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a single entry in the education section (e.g., a degree).</rdfs:comment>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="&cv;JobExperience">
+        <rdfs:label xml:lang="en">Job Experience Entry</rdfs:label>
+        <rdfs:label xml:lang="fr">Expérience Professionnelle</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a single job or internship experience.</rdfs:comment>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="&cv;SkillCategory">
+        <rdfs:label xml:lang="en">Skill Category</rdfs:label>
+        <rdfs:label xml:lang="fr">Catégorie de Compétence</rdfs:label>
+        <rdfs:comment xml:lang="en">A category for grouping technical skills.</rdfs:comment>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="&cv;Skill">
+        <rdfs:label xml:lang="en">Skill</rdfs:label>
+        <rdfs:label xml:lang="fr">Compétence</rdfs:label>
+        <rdfs:comment xml:lang="en">An individual technical skill or tool.</rdfs:comment>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="&cv;LanguageProficiency">
+        <rdfs:label xml:lang="en">Language Proficiency</rdfs:label>
+        <rdfs:label xml:lang="fr">Compétence Linguistique</rdfs:label>
+        <rdfs:comment xml:lang="en">Details about a language and its proficiency level.</rdfs:comment>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="&cv;Project">
+        <rdfs:label xml:lang="en">Project</rdfs:label>
+        <rdfs:label xml:lang="fr">Projet</rdfs:label>
+        <rdfs:comment xml:lang="en">Describes a personal or professional project.</rdfs:comment>
+    </rdfs:Class>
+
+    <rdf:Property rdf:about="&cv;fullName">
+        <rdfs:label xml:lang="en">Full Name</rdfs:label>
+        <rdfs:label xml:lang="fr">Nom Complet</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;hasPhoto">
+        <rdfs:label xml:lang="en">Has Photo</rdfs:label>
+        <rdfs:label xml:lang="fr">A une photo</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;phoneNumber">
+        <rdfs:label xml:lang="en">Phone Number</rdfs:label>
+        <rdfs:label xml:lang="fr">Numéro de Téléphone</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;emailAddress">
+        <rdfs:label xml:lang="en">Email Address</rdfs:label>
+        <rdfs:label xml:lang="fr">Adresse e-mail</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;internshipDuration">
+        <rdfs:label xml:lang="en">Internship Duration</rdfs:label>
+        <rdfs:label xml:lang="fr">Durée de Stage</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;internshipPeriod">
+        <rdfs:label xml:lang="en">Internship Period</rdfs:label>
+        <rdfs:label xml:lang="fr">Période de Stage</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;summaryText">
+        <rdfs:label xml:lang="en">Summary Text</rdfs:label>
+        <rdfs:label xml:lang="fr">Résumé</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;title">
+        <rdfs:label xml:lang="en">Title</rdfs:label>
+        <rdfs:label xml:lang="fr">Titre</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;institution">
+        <rdfs:label xml:lang="en">Institution</rdfs:label>
+        <rdfs:label xml:lang="fr">Institution</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;studyType">
+        <rdfs:label xml:lang="en">Study Type</rdfs:label>
+        <rdfs:label xml:lang="fr">Type d'études</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;years">
+        <rdfs:label xml:lang="en">Years</rdfs:label>
+        <rdfs:label xml:lang="fr">Années</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;company">
+        <rdfs:label xml:lang="en">Company</rdfs:label>
+        <rdfs:label xml:lang="fr">Entreprise</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;hasResponsibility">
+        <rdfs:label xml:lang="en">Has Responsibility</rdfs:label>
+        <rdfs:label xml:lang="fr">A une responsabilité</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;JobExperience"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;skillName">
+        <rdfs:label xml:lang="en">Skill Name</rdfs:label>
+        <rdfs:label xml:lang="fr">Nom de compétence</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Skill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;languageName">
+        <rdfs:label xml:lang="en">Language Name</rdfs:label>
+        <rdfs:label xml:lang="fr">Nom de la langue</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;LanguageProficiency"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;languageLevel">
+        <rdfs:label xml:lang="en">Language Level</rdfs:label>
+        <rdfs:label xml:lang="fr">Niveau de langue</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;LanguageProficiency"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;languageCertification">
+        <rdfs:label xml:lang="en">Language Certification</rdfs:label>
+        <rdfs:label xml:lang="fr">Certification linguistique</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;LanguageProficiency"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;projectYear">
+        <rdfs:label xml:lang="en">Project Year</rdfs:label>
+        <rdfs:label xml:lang="fr">Année du projet</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;projectDescription">
+        <rdfs:label xml:lang="en">Project Description</rdfs:label>
+        <rdfs:label xml:lang="fr">Description du projet</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;projectLink">
+        <rdfs:label xml:lang="en">Project Link</rdfs:label>
+        <rdfs:label xml:lang="fr">Lien du projet</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;projectLoginInfo">
+        <rdfs:label xml:lang="en">Project Login Info</rdfs:label>
+        <rdfs:label xml:lang="fr">Informations de connexion du projet</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;projectImage">
+        <rdfs:label xml:lang="en">Project Image</rdfs:label>
+        <rdfs:label xml:lang="fr">Image du projet</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;hasEducation">
+        <rdfs:label xml:lang="en">Has Education</rdfs:label>
+        <rdfs:label xml:lang="fr">A une formation</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Person"/>
+        <rdfs:range rdf:resource="&cv;Education"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;hasJobExperience">
+        <rdfs:label xml:lang="en">Has Job Experience</rdfs:label>
+        <rdfs:label xml:lang="fr">A une expérience professionnelle</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Person"/>
+        <rdfs:range rdf:resource="&cv;JobExperience"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;hasSkillCategory">
+        <rdfs:label xml:lang="en">Has Skill Category</rdfs:label>
+        <rdfs:label xml:lang="fr">A une catégorie de compétence</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Person"/>
+        <rdfs:range rdf:resource="&cv;SkillCategory"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;includesSkill">
+        <rdfs:label xml:lang="en">Includes Skill</rdfs:label>
+        <rdfs:label xml:lang="fr">Inclut une compétence</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;SkillCategory"/>
+        <rdfs:range rdf:resource="&cv;Skill"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;hasLanguageProficiency">
+        <rdfs:label xml:lang="en">Has Language Proficiency</rdfs:label>
+        <rdfs:label xml:lang="fr">A une compétence linguistique</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Person"/>
+        <rdfs:range rdf:resource="&cv;LanguageProficiency"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="&cv;hasProject">
+        <rdfs:label xml:lang="en">Has Project</rdfs:label>
+        <rdfs:label xml:lang="fr">A un projet</rdfs:label>
+        <rdfs:domain rdf:resource="&cv;Person"/>
+        <rdfs:range rdf:resource="&cv;Project"/>
+    </rdf:Property>
+
+</rdf:RDF>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:cv="http://example.org/cv-schema#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+   <cv:Person rdf:about="http://example.org/cv/bassetter_arthur">
+      <cv:fullName>BASSETTE Arthur</cv:fullName>
+      <cv:hasPhoto rdf:resource="moi.jpg"/>
+      <cv:phoneNumber>+33 7 83 05 50 12</cv:phoneNumber>
+      <cv:emailAddress>arthur.chancereul@gmail.com</cv:emailAddress>
+      <cv:internshipDuration xml:lang="en">8 weeks</cv:internshipDuration>
+      <cv:internshipDuration xml:lang="fr">8 semaines</cv:internshipDuration>
+      <cv:internshipDuration xml:lang="zh">8周</cv:internshipDuration>
+      <cv:internshipPeriod xml:lang="en">March - July 2026</cv:internshipPeriod>
+      <cv:internshipPeriod xml:lang="fr">Mars - Juillet 2026</cv:internshipPeriod>
+      <cv:internshipPeriod xml:lang="zh">2026年3月至7月</cv:internshipPeriod>
+      <cv:summaryText xml:lang="en">Computer Science engineering student (second year) at Sup Galilée, currently in a work-study program as an Assistant Project Manager specializing in Business Intelligence (BI) at Institut Catholique de Paris. Passionate about data analytics, software development, and project management. Strong problem-solving skills and experience with BI tools, programming, and data visualization.</cv:summaryText>
+      <cv:summaryText xml:lang="fr">Étudiant en 2e année d'ingénierie informatique à Sup Galilée, actuellement en alternance comme  assistant chef de projet en Business Intelligence (BI) à l’Institut Catholique de Paris. Passionné par l’analyse de données, le développement logiciel et la gestion de projet. Fortes compétences en résolution de problèmes et expérience avec les outils BI, la programmation et la visualisation de données.</cv:summaryText>
+      <cv:summaryText xml:lang="zh">Sup Galilée计算机工程系二年级学生，目前在巴黎天主教学院担任商务智能（BI）项目助理，采用学徒制培养方式。热衷于数据分析、软件开发和项目管理，具备扎实的问题解决能力和丰富的BI工具、编程与数据可视化经验。</cv:summaryText>
+      <cv:hasJobExperience>
+         <cv:JobExperience rdf:about="http://example.org/cv/job/d2e160">
+            <cv:title xml:lang="en">Assistant Project Manager – Business Intelligence</cv:title>
+            <cv:title xml:lang="fr">Assistant chef de projet – Business Intelligence</cv:title>
+            <cv:title xml:lang="zh">商务智能助理项目经理</cv:title>
+            <cv:company>Institut Catholique de Paris</cv:company>
+            <cv:years>2023 – Present</cv:years>
+            <cv:hasResponsibility xml:lang="en">Assisting in the implementation and optimization of BI solutions to support strategic decision-making.</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="fr">Participer à la mise en œuvre et à l’optimisation de solutions BI pour soutenir les décisions stratégiques.</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="zh">协助实施和优化BI解决方案，以支持战略决策。</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="en">Extracting, transforming, and visualizing data using BI tools.</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="fr">Extraire, transformer et visualiser des données à l’aide d’outils BI.</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="zh">使用BI工具提取、转换并可视化数据。</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="en">Collaborating with stakeholders to define reporting needs and improve data-driven processes.</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="fr">Collaborer avec les parties prenantes pour définir les besoins de reporting et améliorer les processus pilotés par les données.</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="zh">与利益相关者协作，定义报告需求并优化数据驱动流程。</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="en">Participating in project planning, documentation, and follow-ups.</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="fr">Participer à la planification de projet, à la documentation et au suivi.</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="zh">参与项目计划、文档编写和后续跟进。</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="en">Around 10,000 students, 1,000 professors and 250 employees use our system.</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="fr">Environ 10 000 étudiants, 1 000 enseignants et 250 employés utilisent notre système.</cv:hasResponsibility>
+            <cv:hasResponsibility xml:lang="zh">约有1万名学生、1千名教授和250名员工使用我们的系统。</cv:hasResponsibility>
+         </cv:JobExperience>
+      </cv:hasJobExperience>
+      <cv:hasEducation>
+         <cv:Education rdf:about="http://example.org/cv/education/d2e58">
+            <cv:title xml:lang="en">Engineering Degree in Computer Science</cv:title>
+            <cv:title xml:lang="fr">Diplôme d’ingénieur en Informatique</cv:title>
+            <cv:title xml:lang="zh">计算机工程学位</cv:title>
+            <cv:institution xml:lang="en">Sup Galilée, Université Sorbonne Paris Nord</cv:institution>
+            <cv:institution xml:lang="fr">Sup Galilée, Université Sorbonne Paris Nord</cv:institution>
+            <cv:institution xml:lang="zh">巴黎北索邦大学 Sup Galilée</cv:institution>
+            <cv:studyType xml:lang="en">Apprenticeship</cv:studyType>
+            <cv:studyType xml:lang="fr">Alternance</cv:studyType>
+            <cv:studyType xml:lang="zh">学徒制</cv:studyType>
+            <cv:years>2023 – Present</cv:years>
+         </cv:Education>
+      </cv:hasEducation>
+      <cv:hasEducation>
+         <cv:Education rdf:about="http://example.org/cv/education/d2e99">
+            <cv:title xml:lang="en">Bachelor’s Degree in Computer Science (L3)</cv:title>
+            <cv:title xml:lang="fr">Licence 3 Informatique</cv:title>
+            <cv:title xml:lang="zh">计算机科学学士（L3）</cv:title>
+            <cv:institution xml:lang="en">Institut Galilée, Université Sorbonne Paris Nord</cv:institution>
+            <cv:institution xml:lang="fr">Institut Galilée, Université Sorbonne Paris Nord</cv:institution>
+            <cv:institution xml:lang="zh">巴黎北索邦大学 Galilée学院</cv:institution>
+            <cv:years>2022 – 2023</cv:years>
+         </cv:Education>
+      </cv:hasEducation>
+      <cv:hasEducation>
+         <cv:Education rdf:about="http://example.org/cv/education/d2e128">
+            <cv:title xml:lang="en">Two-Year Preparatory Program for Engineering School (CP2I)</cv:title>
+            <cv:title xml:lang="fr">Classe Préparatoire  Ingénieur Intégrée (CP2I)</cv:title>
+            <cv:title xml:lang="zh">工程学院预科项目（CPGE）</cv:title>
+            <cv:institution xml:lang="en">Sup Galilée, Université Sorbonne Paris Nord</cv:institution>
+            <cv:institution xml:lang="fr">Sup Galilée, Université Sorbonne Paris Nord</cv:institution>
+            <cv:institution xml:lang="zh">巴黎北索邦大学 Sup Galilée</cv:institution>
+            <cv:years>2020 – 2022</cv:years>
+         </cv:Education>
+      </cv:hasEducation>
+      <cv:hasSkillCategory>
+         <cv:SkillCategory rdf:about="http://example.org/cv/skillcat/BusinessIntelligence">
+            <cv:title>BusinessIntelligence</cv:title>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e249">
+                  <cv:skillName>Power BI</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e251">
+                  <cv:skillName>Azure Data Factory</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e253">
+                  <cv:skillName>SQL</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+         </cv:SkillCategory>
+      </cv:hasSkillCategory>
+      <cv:hasSkillCategory>
+         <cv:SkillCategory rdf:about="http://example.org/cv/skillcat/ProgrammingLanguages">
+            <cv:title>ProgrammingLanguages</cv:title>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e258">
+                  <cv:skillName>C</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e260">
+                  <cv:skillName>Java</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e262">
+                  <cv:skillName>SQL</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e264">
+                  <cv:skillName>HTML</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e266">
+                  <cv:skillName>CSS</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e269">
+                  <cv:skillName>JavaScript</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e271">
+                  <cv:skillName>C++</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e273">
+                  <cv:skillName>Prolog</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e275">
+                  <cv:skillName>Haskell</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+         </cv:SkillCategory>
+      </cv:hasSkillCategory>
+      <cv:hasSkillCategory>
+         <cv:SkillCategory rdf:about="http://example.org/cv/skillcat/DataManagement">
+            <cv:title>DataManagement</cv:title>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e280">
+                  <cv:skillName>ETL</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e282">
+                  <cv:skillName>Database Design</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e284">
+                  <cv:skillName>Data Visualization</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+         </cv:SkillCategory>
+      </cv:hasSkillCategory>
+      <cv:hasSkillCategory>
+         <cv:SkillCategory rdf:about="http://example.org/cv/skillcat/SoftwareTools">
+            <cv:title>SoftwareTools</cv:title>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e289">
+                  <cv:skillName>Microsoft Office (Word, Excel, PowerPoint)</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e291">
+                  <cv:skillName>Git</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+         </cv:SkillCategory>
+      </cv:hasSkillCategory>
+      <cv:hasSkillCategory>
+         <cv:SkillCategory rdf:about="http://example.org/cv/skillcat/OperatingSystems">
+            <cv:title>OperatingSystems</cv:title>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e297">
+                  <cv:skillName>Windows</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+            <cv:includesSkill>
+               <cv:Skill rdf:about="http://example.org/cv/skill/d2e299">
+                  <cv:skillName>Linux</cv:skillName>
+               </cv:Skill>
+            </cv:includesSkill>
+         </cv:SkillCategory>
+      </cv:hasSkillCategory>
+      <cv:hasLanguageProficiency>
+         <cv:LanguageProficiency rdf:about="http://example.org/cv/language/d2e306">
+            <cv:languageName>English</cv:languageName>
+            <cv:languageLevel>B2</cv:languageLevel>
+            <cv:languageCertification>Cambridge English Certificate</cv:languageCertification>
+         </cv:LanguageProficiency>
+      </cv:hasLanguageProficiency>
+      <cv:hasLanguageProficiency>
+         <cv:LanguageProficiency rdf:about="http://example.org/cv/language/d2e315">
+            <cv:languageName>French</cv:languageName>
+            <cv:languageLevel>Native</cv:languageLevel>
+         </cv:LanguageProficiency>
+      </cv:hasLanguageProficiency>
+      <cv:hasProject>
+         <cv:Project rdf:about="http://example.org/cv/project/d2e325">
+            <cv:title xml:lang="en">Web Application About Movies and Shows</cv:title>
+            <cv:title xml:lang="fr">Application web sur les films et séries</cv:title>
+            <cv:title xml:lang="zh">关于电影和剧集的网络应用</cv:title>
+            <cv:projectYear rdf:datatype="xsd:gYear">2024</cv:projectYear>
+            <cv:projectDescription xml:lang="en">Developed a web application using React and NextJS. Linked to a database with API. Includes responsive design and authentication.</cv:projectDescription>
+            <cv:projectDescription xml:lang="fr">Développement d'une application web avec React et NextJS. Connectée à une base de données via une API. Responsive et avec authentification.</cv:projectDescription>
+            <cv:projectDescription xml:lang="zh">使用React和NextJS开发的Web应用程序。通过API连接数据库。包含响应式设计和身份验证。</cv:projectDescription>
+            <cv:projectLink rdf:resource="https://projet-pwa-drab.vercel.app/login"/>
+            <cv:projectLoginInfo xml:lang="en">Login: tomarthour@gmail.com, Password: ebzd</cv:projectLoginInfo>
+            <cv:projectLoginInfo xml:lang="fr">Identifiant : tomarthour@gmail.com, Mot de passe : ebzd</cv:projectLoginInfo>
+            <cv:projectLoginInfo xml:lang="zh">登录：tomarthour@gmail.com，密码：ebzd</cv:projectLoginInfo>
+            <cv:projectImage rdf:resource="web_app_movie.png"/>
+         </cv:Project>
+      </cv:hasProject>
+      <cv:hasProject>
+         <cv:Project rdf:about="http://example.org/cv/project/d2e368">
+            <cv:title xml:lang="en">Train Simulator</cv:title>
+            <cv:title xml:lang="fr">Simulateur de Train</cv:title>
+            <cv:title xml:lang="zh">火车模拟器</cv:title>
+            <cv:projectYear rdf:datatype="xsd:gYear">2023</cv:projectYear>
+            <cv:projectDescription xml:lang="en">Developed a top-down game in JavaScript to place blocks on a map and simulate train movement.</cv:projectDescription>
+            <cv:projectDescription xml:lang="fr">Création d’un jeu en vue de dessus avec JavaScript permettant de placer des blocs sur une carte et simuler le déplacement de trains.</cv:projectDescription>
+            <cv:projectDescription xml:lang="zh">用JavaScript开发的俯视图游戏，可在地图上放置模块并模拟列车运行。</cv:projectDescription>
+            <cv:projectImage rdf:resource="web_project.png"/>
+         </cv:Project>
+      </cv:hasProject>
+      <cv:hasProject>
+         <cv:Project rdf:about="http://example.org/cv/project/d2e397">
+            <cv:title xml:lang="en">Access to Documents</cv:title>
+            <cv:title xml:lang="fr">Accès aux documents</cv:title>
+            <cv:title xml:lang="zh">文档访问</cv:title>
+            <cv:projectYear rdf:datatype="xsd:gYear">2023</cv:projectYear>
+            <cv:projectDescription xml:lang="en">Created a web page in JavaScript for administrative staff to access documents.</cv:projectDescription>
+            <cv:projectDescription xml:lang="fr">Création d’une page web en JavaScript pour permettre au personnel administratif d’accéder aux documents.</cv:projectDescription>
+            <cv:projectDescription xml:lang="zh">用JavaScript开发的网页，供行政人员访问文档。</cv:projectDescription>
+         </cv:Project>
+      </cv:hasProject>
+      <cv:hasProject>
+         <cv:Project rdf:about="http://example.org/cv/project/d2e426">
+            <cv:title xml:lang="en">Tamagochi Like</cv:title>
+            <cv:title xml:lang="fr">Jeu type Tamagotchi</cv:title>
+            <cv:title xml:lang="zh">宠物养成游戏</cv:title>
+            <cv:projectYear rdf:datatype="xsd:gYear">2023</cv:projectYear>
+            <cv:projectDescription xml:lang="en">Created a graphical version of a Tamagotchi-style game using JavaScript, HTML and CSS.</cv:projectDescription>
+            <cv:projectDescription xml:lang="fr">Création d’un jeu graphique type Tamagotchi avec JavaScript, HTML et CSS.</cv:projectDescription>
+            <cv:projectDescription xml:lang="zh">使用JavaScript、HTML和CSS开发的Tamagotchi风格图形游戏。</cv:projectDescription>
+         </cv:Project>
+      </cv:hasProject>
+      <cv:hasProject>
+         <cv:Project rdf:about="http://example.org/cv/project/d2e455">
+            <cv:title xml:lang="en">Window Manager</cv:title>
+            <cv:title xml:lang="fr">Gestionnaire de fenêtres</cv:title>
+            <cv:title xml:lang="zh">窗口管理器</cv:title>
+            <cv:projectYear rdf:datatype="xsd:gYear">2023</cv:projectYear>
+            <cv:projectDescription xml:lang="en">Developed a graphical window manager using OCaml.</cv:projectDescription>
+            <cv:projectDescription xml:lang="fr">Développement d’un gestionnaire de fenêtres graphique en OCaml.</cv:projectDescription>
+            <cv:projectDescription xml:lang="zh">使用OCaml开发的图形窗口管理器。</cv:projectDescription>
+         </cv:Project>
+      </cv:hasProject>
+      <cv:hasProject>
+         <cv:Project rdf:about="http://example.org/cv/project/d2e485">
+            <cv:title xml:lang="en">Mastermind Game</cv:title>
+            <cv:title xml:lang="fr">Jeu du Mastermind</cv:title>
+            <cv:title xml:lang="zh">猜数字游戏</cv:title>
+            <cv:projectYear rdf:datatype="xsd:gYear">2022</cv:projectYear>
+            <cv:projectDescription xml:lang="en">Created a graphical version of the classic game in C.</cv:projectDescription>
+            <cv:projectDescription xml:lang="fr">Réalisation d’une version graphique du jeu classique en langage C.</cv:projectDescription>
+            <cv:projectDescription xml:lang="zh">用C语言开发的经典游戏图形版本。</cv:projectDescription>
+         </cv:Project>
+      </cv:hasProject>
+      <cv:hasProject>
+         <cv:Project rdf:about="http://example.org/cv/project/d2e514">
+            <cv:title xml:lang="en">Random Binary Tree Generator</cv:title>
+            <cv:title xml:lang="fr">Générateur d’arbres binaires aléatoires</cv:title>
+            <cv:title xml:lang="zh">随机二叉树生成器</cv:title>
+            <cv:projectYear rdf:datatype="xsd:gYear">2021</cv:projectYear>
+            <cv:projectDescription xml:lang="en">Implemented a program in C to generate and manipulate binary trees.</cv:projectDescription>
+            <cv:projectDescription xml:lang="fr">Implémentation en C d’un programme permettant de générer et manipuler des arbres binaires.</cv:projectDescription>
+            <cv:projectDescription xml:lang="zh">用C语言实现的程序，用于生成和操作二叉树。</cv:projectDescription>
+         </cv:Project>
+      </cv:hasProject>
+      <cv:hasProject>
+         <cv:Project rdf:about="http://example.org/cv/project/d2e543">
+            <cv:title xml:lang="en">Pac-Man Clone</cv:title>
+            <cv:title xml:lang="fr">Clone de Pac-Man</cv:title>
+            <cv:title xml:lang="zh">吃豆人克隆游戏</cv:title>
+            <cv:projectYear rdf:datatype="xsd:gYear">2021</cv:projectYear>
+            <cv:projectDescription xml:lang="en">Developed a simple Pac-Man-inspired game in C.</cv:projectDescription>
+            <cv:projectDescription xml:lang="fr">Développement d’un jeu inspiré de Pac-Man en C.</cv:projectDescription>
+            <cv:projectDescription xml:lang="zh">用C语言开发的简易版吃豆人游戏。</cv:projectDescription>
+         </cv:Project>
+      </cv:hasProject>
+      <cv:hasProject>
+         <cv:Project rdf:about="http://example.org/cv/project/d2e572">
+            <cv:title xml:lang="en">Personal Webpage</cv:title>
+            <cv:title xml:lang="fr">Page Web personnelle</cv:title>
+            <cv:title xml:lang="zh">个人网页</cv:title>
+            <cv:projectYear rdf:datatype="xsd:gYear">2018</cv:projectYear>
+            <cv:projectDescription xml:lang="en">Designed a basic webpage using HTML and CSS.</cv:projectDescription>
+            <cv:projectDescription xml:lang="fr">Conception d’une page Web simple avec HTML et CSS.</cv:projectDescription>
+            <cv:projectDescription xml:lang="zh">使用HTML和CSS设计的基础网页。</cv:projectDescription>
+         </cv:Project>
+      </cv:hasProject>
+   </cv:Person>
+</rdf:RDF>
