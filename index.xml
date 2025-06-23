@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="portfolio.xsl"?>
-<CV>
+<CV xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="portefolio.xsd">
   <PersonalInfo>
     <Name image="moi.jpg" >BASSETTE Arthur</Name>
     <Phone>+33 7 83 05 50 12</Phone>
