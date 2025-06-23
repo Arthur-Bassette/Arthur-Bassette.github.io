@@ -33,6 +33,12 @@
     object-fit: cover;
     border: 3px solid white;
     margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Ajout d'une transition */
+  }
+
+  .profile-photo:hover {
+    transform: scale(1.5); /* Grossit l'image de 10% au survol */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Ombre lumineuse blanche autour de l'image */
   }
   section {
     padding: 20px 40px;
