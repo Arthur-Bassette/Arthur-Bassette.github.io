@@ -161,7 +161,7 @@
   </Languages>
 
   <Projects>
-    <Project>
+    <Project image="web_app_movie.png">
       <Title>
         <Lang id="en">Web Application About Movies and Shows</Lang>
         <Lang id="fr">Application web sur les films et séries</Lang>
@@ -181,7 +181,7 @@
       </LoginInfo>
     </Project>
 
-    <Project>
+    <Project image="web_project.png">
       <Title>
         <Lang id="en">Train Simulator</Lang>
         <Lang id="fr">Simulateur de Train</Lang>
