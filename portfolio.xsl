@@ -9,65 +9,77 @@
       <head>
         <title>Portfolio - <xsl:value-of select="CV/PersonalInfo/Name"/></title>
         <style>
-          body {
-            font-family: Arial, sans-serif;
-            background-color: #f6f8fa;
-            color: #2e2e2e;
-            margin: 0;
-            padding: 0;
-          }
-          header {
-            background-color: #002855;
-            color: white;
-            padding: 20px;
-            text-align: center;
-          }
-          section {
-            padding: 20px 40px;
-            border-bottom: 1px solid #ddd;
-            background-color: white;
-          }
-          h2 {
-            color: #002855;
-            border-bottom: 2px solid #002855;
-            padding-bottom: 5px;
-          }
-          ul {
-            padding-left: 20px;
-          }
-          .project {
-            margin-bottom: 15px;
-          }
-          .contact {
-            margin-top: 5px;
-            font-size: 0.95em;
-            color: #ccc;
-          }
-          .lang-switcher {
-            text-align: right;
-            padding: 10px 40px;
-            background-color: #e9eef3;
-          }
-          .lang-switcher button {
-            margin-left: 10px;
-            background-color: #002855;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-          }
-          .lang-switcher button:hover {
-            background-color: #004080;
-          }
-          /* Style pour les contenus multilingues */
-          .lang-content {
-            display: none; /* Masquer toutes les langues par défaut */
-          }
-          .lang-content.active {
-            display: inline; /* Afficher la langue active */
-          }
-        </style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f8fa;
+    color: #2e2e2e;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #002855;
+    color: white;
+    padding: 20px;
+    text-align: center; /* Centrera le texte et les éléments inline-block */
+    display: flex; /* Utilise Flexbox pour un meilleur alignement */
+    flex-direction: column; /* Organise les éléments en colonne */
+    align-items: center; /* Centre les éléments horizontalement dans le conteneur flex */
+    justify-content: center; /* Centre les éléments verticalement (si le header a une hauteur fixe) */
+  }
+  .profile-photo {
+    width: 120px; /* Taille de l'image */
+    height: 120px; /* Rend l'image carrée */
+    border-radius: 50%; /* Rend l'image ronde */
+    object-fit: cover; /* Assure que l'image couvre bien la zone sans être déformée */
+    border: 3px solid white; /* Petite bordure blanche autour de l'image */
+    margin-bottom: 15px; /* Espace sous l'image */
+  }
+  section {
+    padding: 20px 40px;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+  }
+  h2 {
+    color: #002855;
+    border-bottom: 2px solid #002855;
+    padding-bottom: 5px;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  .project {
+    margin-bottom: 15px;
+  }
+  .contact {
+    margin-top: 5px;
+    font-size: 0.95em;
+    color: #ccc;
+  }
+  .lang-switcher {
+    text-align: right;
+    padding: 10px 40px;
+    background-color: #e9eef3;
+  }
+  .lang-switcher button {
+    margin-left: 10px;
+    background-color: #002855;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .lang-switcher button:hover {
+    background-color: #004080;
+  }
+  /* Style pour les contenus multilingues */
+  .lang-content {
+    display: none; /* Masquer toutes les langues par défaut */
+  }
+  .lang-content.active {
+    display: inline; /* Afficher la langue active */
+  }
+</style>    
       </head>
       <body>
 
@@ -79,21 +91,22 @@
         </div>
 
         <header>
-          <h1><xsl:value-of select="CV/PersonalInfo/Name"/></h1>
-          <div class="contact">
+        <img src="{CV/PersonalInfo/Name/@image}" alt="Ma photo" class="profile-photo"/>
+        <h1><xsl:value-of select="CV/PersonalInfo/Name"/></h1>
+        <div class="contact">
             <div><xsl:value-of select="CV/PersonalInfo/Phone"/></div>
             <div><xsl:value-of select="CV/PersonalInfo/Email"/></div>
             <div>
-                <span data-lang-en="Internship : " data-lang-fr="Stage : " data-lang-zh="实习 :*">Internship:</span>
-                <xsl:for-each select="CV/PersonalInfo/InternshipSearch/Duration/Lang">
-                <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
-                </xsl:for-each>
-                <span data-lang-en=" between " data-lang-fr=" entre " data-lang-zh=" 在 "> between </span>
-                <xsl:for-each select="CV/PersonalInfo/InternshipSearch/Period/Lang">
-                <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
-                </xsl:for-each>
+            <span data-lang-en="Internship : " data-lang-fr="Stage : " data-lang-zh="实习 :*">Internship:</span>
+            <xsl:for-each select="CV/PersonalInfo/InternshipSearch/Duration/Lang">
+            <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
+            </xsl:for-each>
+            <span data-lang-en=" between " data-lang-fr=" entre " data-lang-zh=" 在 "> between </span>
+            <xsl:for-each select="CV/PersonalInfo/InternshipSearch/Period/Lang">
+            <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
+            </xsl:for-each>
             </div>
-          </div>
+         </div>
         </header>
 
         <section>
