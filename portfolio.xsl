@@ -8,7 +8,7 @@
     <html>
       <head>
         <title>Portfolio - <xsl:value-of select="CV/PersonalInfo/Name"/></title>
-        <style>
+ <style>
   body {
     font-family: Arial, sans-serif;
     background-color: #f6f8fa;
@@ -20,19 +20,19 @@
     background-color: #002855;
     color: white;
     padding: 20px;
-    text-align: center; /* Centrera le texte et les éléments inline-block */
-    display: flex; /* Utilise Flexbox pour un meilleur alignement */
-    flex-direction: column; /* Organise les éléments en colonne */
-    align-items: center; /* Centre les éléments horizontalement dans le conteneur flex */
-    justify-content: center; /* Centre les éléments verticalement (si le header a une hauteur fixe) */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .profile-photo {
-    width: 120px; /* Taille de l'image */
-    height: 120px; /* Rend l'image carrée */
-    border-radius: 50%; /* Rend l'image ronde */
-    object-fit: cover; /* Assure que l'image couvre bien la zone sans être déformée */
-    border: 3px solid white; /* Petite bordure blanche autour de l'image */
-    margin-bottom: 15px; /* Espace sous l'image */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    margin-bottom: 15px;
   }
   section {
     padding: 20px 40px;
@@ -48,8 +48,47 @@
     padding-left: 20px;
   }
   .project {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+    display: block;
+    text-align: left;
   }
+  .project:last-child {
+    border-bottom: none;
+  }
+  /* NOUVELLES RÈGLES POUR LES IMAGES DE PROJET */
+  .project-image {
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+    margin: 15px 0 10px 0;
+    padding: 5px;
+    border: 3px solid #002855;
+    border-radius: 8px;
+    background-color: #f0f2f5;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Augmentation de la durée de transition */
+  }
+
+  .project-image:hover {
+    transform: scale(1.25); /* Agrandit l'image de 15% au survol */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Ombre plus intense au survol */
+  }
+
+  /* Ajustements pour les titres et descriptions des projets */
+  .project strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .project p {
+    margin-top: 5px;
+  }
+  .project ul {
+    padding-left: 20px;
+  }
+
   .contact {
     margin-top: 5px;
     font-size: 0.95em;
@@ -74,12 +113,12 @@
   }
   /* Style pour les contenus multilingues */
   .lang-content {
-    display: none; /* Masquer toutes les langues par défaut */
+    display: none;
   }
   .lang-content.active {
-    display: inline; /* Afficher la langue active */
+    display: inline;
   }
-</style>    
+</style>
       </head>
       <body>
 
@@ -225,43 +264,46 @@
           </ul>
         </section>
 
-        <section>
-          <h2>
-            <span data-lang-en="Projects" data-lang-fr="Projets" data-lang-zh="项目">Projects</span>
-          </h2>
-          <xsl:for-each select="CV/Projects/Project">
-            <div class="project">
-              <strong>
-                <xsl:for-each select="Title/Lang">
-                  <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
-                </xsl:for-each>
-              </strong>
-              (<xsl:value-of select="Year"/>)
-              <p>
-                <xsl:for-each select="Description/Lang">
-                  <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
-                </xsl:for-each>
-              </p>
-              <xsl:if test="Link">
-                <p>
-                  <a href="{Link}" target="_blank">
-                    <span data-lang-en="Link to Project" data-lang-fr="Lien vers le projet" data-lang-zh="项目链接">Link to Project</span>
-                  </a>
-                </p>
-              </xsl:if>
-              <xsl:if test="LoginInfo">
-                <p>
-                  <em>
-                    <xsl:for-each select="LoginInfo/Lang">
-                      <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
-                    </xsl:for-each>
-                  </em>
-                </p>
-              </xsl:if>
-            </div>
-          </xsl:for-each>
-        </section>
+       <section>
+  <h2>
+    <span data-lang-en="Projects" data-lang-fr="Projets" data-lang-zh="项目">Projects</span>
+  </h2>
+  <xsl:for-each select="CV/Projects/Project">
+    <div class="project">
+      <strong>
+        <xsl:for-each select="Title/Lang">
+          <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
+        </xsl:for-each>
+      </strong>
+      (<xsl:value-of select="Year"/>)
 
+      <xsl:if test="@image">
+        <img src="{@image}" alt="Image du projet" class="project-image"/>
+      </xsl:if>
+      <p>
+        <xsl:for-each select="Description/Lang">
+          <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
+        </xsl:for-each>
+      </p>
+      <xsl:if test="Link">
+        <p>
+          <a href="{Link}" target="_blank">
+            <span data-lang-en="Link to Project" data-lang-fr="Lien vers le projet" data-lang-zh="项目链接">Link to Project</span>
+          </a>
+        </p>
+      </xsl:if>
+      <xsl:if test="LoginInfo">
+        <p>
+          <em>
+            <xsl:for-each select="LoginInfo/Lang">
+              <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
+            </xsl:for-each>
+          </em>
+        </p>
+      </xsl:if>
+    </div>
+  </xsl:for-each>
+</section>
         <script>
 
           function getPreferredLang() {
