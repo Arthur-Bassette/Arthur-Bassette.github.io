@@ -4,8 +4,7 @@
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
 
     <xsl:template match="/">
-        <html>
-            <head>
+        <html vocab="https://schema.org/"> <head>
                 <title>Portfolio - <xsl:value-of select="CV/PersonalInfo/Name"/></title>
                 <meta charset="UTF-8"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -40,12 +39,12 @@
                         object-fit: cover;
                         border: 3px solid white;
                         margin-bottom: 15px;
-                        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Ajout d'une transition */
+                        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
                     }
 
                     .profile-photo:hover {
-                        transform: scale(1.5); /* Grossit l'image de 10% au survol */
-                        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Ombre lumineuse blanche autour de l'image */
+                        transform: scale(1.5);
+                        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
                     }
                     section {
                         padding: 20px 40px;
@@ -82,12 +81,12 @@
                         border-radius: 8px;
                         background-color: #f0f2f5;
                         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-                        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Augmentation de la durée de transition */
+                        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
                     }
 
                     .project-image:hover {
-                        transform: scale(1.25); /* Agrandit l'image de 15% au survol */
-                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Ombre plus intense au survol */
+                        transform: scale(1.25);
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
                     }
 
                     /* Ajustements pour les titres et descriptions des projets */
@@ -141,7 +140,7 @@
                         font-size: 0.9em;
                     }
                     footer a {
-                        color: #a0d6ff; /* Couleur de lien plus claire pour le footer */
+                        color: #a0d6ff;
                         text-decoration: none;
                     }
                     footer a:hover {
@@ -158,13 +157,8 @@
                     <button onclick="setLang('zh')">🇨🇳 中文</button>
                 </div>
 
-                <header>
-                    <img src="{CV/PersonalInfo/Name/@image}" alt="Ma photo" class="profile-photo"/>
-                    <h1><xsl:value-of select="CV/PersonalInfo/Name"/></h1>
-                    <div class="contact">
-                        <div><xsl:value-of select="CV/PersonalInfo/Phone"/></div>
-                        <div><xsl:value-of select="CV/PersonalInfo/Email"/></div>
-                        <div>
+                <header typeof="Person"> <img property="image" src="{CV/PersonalInfo/Name/@image}" alt="Ma photo" class="profile-photo"/> <h1 property="name"><xsl:value-of select="CV/PersonalInfo/Name"/></h1> <div class="contact">
+                        <div><span property="telephone"><xsl:value-of select="CV/PersonalInfo/Phone"/></span></div> <div><span property="email"><xsl:value-of select="CV/PersonalInfo/Email"/></span></div> <div>
                             <span data-lang-en="Internship : " data-lang-fr="Stage : " data-lang-zh="实习 :*">Internship:</span>
                             <xsl:for-each select="CV/PersonalInfo/InternshipSearch/Duration/Lang">
                                 <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
@@ -177,14 +171,12 @@
                     </div>
                 </header>
 
-                <section>
-                    <h2>
+                <section typeof="Person"> <h2>
                         <span data-lang-en="Professional Summary" data-lang-fr="Résumé professionnel" data-lang-zh="专业概况">
                             Professional Summary
                         </span>
                     </h2>
-                    <p>
-                        <xsl:for-each select="CV/ProfessionalSummary/Text/Lang">
+                    <p property="description"> <xsl:for-each select="CV/ProfessionalSummary/Text/Lang">
                             <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
                         </xsl:for-each>
                     </p>
@@ -195,26 +187,22 @@
                         <span data-lang-en="Education" data-lang-fr="Formation" data-lang-zh="教育背景">Education</span>
                     </h2>
                     <xsl:for-each select="CV/Education/Degree">
-                        <p>
-                            <strong>
+                        <p typeof="EducationalOccupationalCredential"> <strong>
                                 <xsl:for-each select="Title/Lang">
-                                    <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
-                                </xsl:for-each>
+                                    <span class="lang-content" data-lang-id="{@id}" property="name"><xsl:value-of select="."/></span> </xsl:for-each>
                             </strong>
                             —
                             <xsl:for-each select="Institution/Lang">
-                                <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
-                            </xsl:for-each>
+                                <span class="lang-content" data-lang-id="{@id}" property="educationalCredentialAwardedBy"><xsl:value-of select="."/></span> </xsl:for-each>
                             <br/>
                             <xsl:if test="Type">
                                 <em>
                                     <xsl:for-each select="Type/Lang">
-                                        <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
-                                    </xsl:for-each>
+                                        <span class="lang-content" data-lang-id="{@id}" property="credentialCategory"><xsl:value-of select="."/></span> </xsl:for-each>
                                 </em>
                                 —
                             </xsl:if>
-                            <xsl:value-of select="Years"/>
+                            <span property="startDate" content="{substring(Years, 1, 4)}"></span> <span property="endDate" content="{substring(Years, 8, 4)}"></span> <xsl:value-of select="Years"/>
                         </p>
                     </xsl:for-each>
                 </section>
@@ -226,17 +214,14 @@
                         </span>
                     </h2>
                     <xsl:for-each select="CV/WorkExperience/Job">
-                        <p>
-                            <strong>
+                        <p typeof="Occupation"> <strong>
                                 <xsl:for-each select="Title/Lang">
-                                    <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
-                                </xsl:for-each>
+                                    <span class="lang-content" data-lang-id="{@id}" property="name"><xsl:value-of select="."/></span> </xsl:for-each>
                             </strong>
-                            — <xsl:value-of select="Company"/> (<xsl:value-of select="Years"/>)
+                            — <span property="worksFor"><xsl:value-of select="Company"/></span> (<span property="startDate" content="{substring-before(Years, ' – ')}"></span><span property="endDate" content="{substring-after(Years, ' – ')}"></span><xsl:value-of select="Years"/>)
                             <ul>
                                 <xsl:for-each select="Responsibilities/Task">
-                                    <li>
-                                        <xsl:for-each select="Lang">
+                                    <li property="responsibilities"> <xsl:for-each select="Lang">
                                             <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
                                         </xsl:for-each>
                                     </li>
@@ -246,47 +231,41 @@
                     </xsl:for-each>
                 </section>
 
-                <section>
-                    <h2>
+                <section typeof="Person"> <h2>
                         <span data-lang-en="Technical Skills" data-lang-fr="Compétences techniques" data-lang-zh="技术技能">
                             Technical Skills
                         </span>
                     </h2>
                     <p><strong><span data-lang-en="Business Intelligence" data-lang-fr="Informatique décisionnelle" data-lang-zh="商业智能">Business Intelligence</span>:</strong>
                         <xsl:for-each select="CV/TechnicalSkills/BusinessIntelligence/Tool">
-                            <xsl:value-of select="."/><xsl:if test="position() != last()">, </xsl:if>
-                        </xsl:for-each>
+                            <span property="knowsAbout"><xsl:value-of select="."/></span><xsl:if test="position() != last()">, </xsl:if> </xsl:for-each>
                     </p>
                     <p><strong><span data-lang-en="Programming Languages" data-lang-fr="Langages de programmation" data-lang-zh="编程语言">Programming Languages</span>:</strong>
                         <xsl:for-each select="CV/TechnicalSkills/ProgrammingLanguages/Language">
-                            <xsl:value-of select="."/><xsl:if test="position() != last()">, </xsl:if>
-                        </xsl:for-each>
+                            <span property="programmingLanguage"><xsl:value-of select="."/></span><xsl:if test="position() != last()">, </xsl:if> </xsl:for-each>
                     </p>
                     <p><strong><span data-lang-en="Data Management" data-lang-fr="Gestion de données" data-lang-zh="数据管理">Data Management</span>:</strong>
                         <xsl:for-each select="CV/TechnicalSkills/DataManagement/Skill">
-                            <xsl:value-of select="."/><xsl:if test="position() != last()">, </xsl:if>
+                            <span property="knowsAbout"><xsl:value-of select="."/></span><xsl:if test="position() != last()">, </xsl:if>
                         </xsl:for-each>
                     </p>
                     <p><strong><span data-lang-en="Software &amp; Tools" data-lang-fr="Logiciels &amp; Outils" data-lang-zh="软件与工具">Software &amp; Tools</span>:</strong>
                         <xsl:for-each select="CV/TechnicalSkills/SoftwareTools/Tool">
-                            <xsl:value-of select="."/><xsl:if test="position() != last()">, </xsl:if>
+                            <span property="knowsAbout"><xsl:value-of select="."/></span><xsl:if test="position() != last()">, </xsl:if>
                         </xsl:for-each>
                     </p>
                     <p><strong><span data-lang-en="Operating Systems" data-lang-fr="Systèmes d'exploitation" data-lang-zh="操作系统">Operating Systems</span>:</strong>
                         <xsl:for-each select="CV/TechnicalSkills/OperatingSystems/System">
-                            <xsl:value-of select="."/><xsl:if test="position() != last()">, </xsl:if>
-                        </xsl:for-each>
+                            <span property="operatingSystem"><xsl:value-of select="."/></span><xsl:if test="position() != last()">, </xsl:if> </xsl:for-each>
                     </p>
                 </section>
 
-                <section>
-                    <h2>
+                <section typeof="Person"> <h2>
                         <span data-lang-en="Languages" data-lang-fr="Langues" data-lang-zh="语言">Languages</span>
                     </h2>
                     <ul>
                         <xsl:for-each select="CV/Languages/Language">
-                            <li>
-                                <xsl:value-of select="Name"/> (<xsl:value-of select="Level"/>)
+                            <li property="knowsLanguage"> <xsl:value-of select="Name"/> (<xsl:value-of select="Level"/>)
                                 <xsl:if test="Certification"> - <em><xsl:value-of select="Certification"/></em></xsl:if>
                             </li>
                         </xsl:for-each>
@@ -298,26 +277,19 @@
                         <span data-lang-en="Projects" data-lang-fr="Projets" data-lang-zh="项目">Projects</span>
                     </h2>
                     <xsl:for-each select="CV/Projects/Project">
-                        <div class="project">
-                            <strong>
+                        <div class="project" typeof="CreativeWork"> <strong>
                                 <xsl:for-each select="Title/Lang">
-                                    <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
-                                </xsl:for-each>
+                                    <span class="lang-content" data-lang-id="{@id}" property="name"><xsl:value-of select="."/></span> </xsl:for-each>
                             </strong>
-                            (<xsl:value-of select="Year"/>)
-
-                            <xsl:if test="@image">
-                                <img src="{@image}" alt="Image du projet" class="project-image"/>
-                            </xsl:if>
+                            (<span property="datePublished"><xsl:value-of select="Year"/></span>) <xsl:if test="@image">
+                                <img property="image" src="{@image}" alt="Image du projet" class="project-image"/> </xsl:if>
                             <p>
                                 <xsl:for-each select="Description/Lang">
-                                    <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
-                                </xsl:for-each>
+                                    <span class="lang-content" data-lang-id="{@id}" property="description"><xsl:value-of select="."/></span> </xsl:for-each>
                             </p>
                             <xsl:if test="Link">
                                 <p>
-                                    <a href="{Link}" target="_blank" rel="noopener noreferrer">
-                                        <span data-lang-en="Link to Project" data-lang-fr="Lien vers le projet" data-lang-zh="项目链接">Link to Project</span>
+                                    <a property="url" href="{Link}" target="_blank" rel="noopener noreferrer"> <span data-lang-en="Link to Project" data-lang-fr="Lien vers le projet" data-lang-zh="项目链接">Link to Project</span>
                                     </a>
                                 </p>
                             </xsl:if>
@@ -370,10 +342,9 @@
                 </script>
 
                 <footer>
-                    <p>
-                        <xsl:value-of select="CV/PersonalInfo/Name"/> |
+                    <p typeof="Person"> <span property="name"><xsl:value-of select="CV/PersonalInfo/Name"/></span> |
                         <span data-lang-en="Contact : " data-lang-fr="Contact : " data-lang-zh="联系方式 : ">Contact : </span>
-                        <a href="mailto:{CV/PersonalInfo/Email}"><xsl:value-of select="CV/PersonalInfo/Email"/></a>
+                        <a property="email" href="mailto:{CV/PersonalInfo/Email}"><xsl:value-of select="CV/PersonalInfo/Email"/></a>
                     </p>
                     <p>
                         <span data-lang-en="For the structured data of this CV:" data-lang-fr="Pour les données structurées de ce CV :" data-lang-zh="此简历的结构化数据 :">Pour les données structurées de ce CV :</span>
