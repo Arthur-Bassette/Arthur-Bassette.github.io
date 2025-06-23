@@ -22,7 +22,7 @@
   <ProfessionalSummary>
     <Text>
       <Lang id="en">Computer Science engineering student (second year) at Sup Galilée, currently in a work-study program as an Assistant Project Manager specializing in Business Intelligence (BI) at Institut Catholique de Paris. Passionate about data analytics, software development, and project management. Strong problem-solving skills and experience with BI tools, programming, and data visualization.</Lang>
-      <Lang id="fr">Étudiant en 2e année d'ingénierie informatique à Sup Galilée, actuellement en alternance comme chef de projet adjoint en Business Intelligence (BI) à l’Institut Catholique de Paris. Passionné par l’analyse de données, le développement logiciel et la gestion de projet. Fortes compétences en résolution de problèmes et expérience avec les outils BI, la programmation et la visualisation de données.</Lang>
+      <Lang id="fr">Étudiant en 2e année d'ingénierie informatique à Sup Galilée, actuellement en alternance comme  assistant chef de projet en Business Intelligence (BI) à l’Institut Catholique de Paris. Passionné par l’analyse de données, le développement logiciel et la gestion de projet. Fortes compétences en résolution de problèmes et expérience avec les outils BI, la programmation et la visualisation de données.</Lang>
       <Lang id="zh">Sup Galilée计算机工程系二年级学生，目前在巴黎天主教学院担任商务智能（BI）项目助理，采用学徒制培养方式。热衷于数据分析、软件开发和项目管理，具备扎实的问题解决能力和丰富的BI工具、编程与数据可视化经验。</Lang>
     </Text>
   </ProfessionalSummary>
@@ -63,8 +63,8 @@
 
     <Degree>
       <Title>
-        <Lang id="en">Two-Year Preparatory Program for Engineering School (CPGE)</Lang>
-        <Lang id="fr">Classe préparatoire intégrée aux écoles d’ingénieur (CPGE)</Lang>
+        <Lang id="en">Two-Year Preparatory Program for Engineering School (CP2I)</Lang>
+        <Lang id="fr">Classe Préparatoire  Ingénieur Intégrée (CP2I)</Lang>
         <Lang id="zh">工程学院预科项目（CPGE）</Lang>
       </Title>
       <Institution>
@@ -80,7 +80,7 @@
     <Job>
       <Title>
         <Lang id="en">Assistant Project Manager – Business Intelligence</Lang>
-        <Lang id="fr">Chef de projet adjoint – Business Intelligence</Lang>
+        <Lang id="fr">Assistant chef de projet – Business Intelligence</Lang>
         <Lang id="zh">商务智能助理项目经理</Lang>
       </Title>
       <Company>Institut Catholique de Paris</Company>
