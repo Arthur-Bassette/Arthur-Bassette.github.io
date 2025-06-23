@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <xs:complexType name="LangText">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="id" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:element name="CV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PersonalInfo" type="PersonalInfoType"/>
+        <xs:element name="ProfessionalSummary" type="ProfessionalSummaryType"/>
+        <xs:element name="Education" type="EducationType"/>
+        <xs:element name="WorkExperience" type="WorkExperienceType"/>
+        <xs:element name="TechnicalSkills" type="TechnicalSkillsType"/>
+        <xs:element name="Languages" type="LanguagesType"/>
+        <xs:element name="Projects" type="ProjectsType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="PersonalInfoType">
+    <xs:sequence>
+      <xs:element name="Name">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="image" type="xs:string" use="optional"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Phone" type="xs:string"/>
+      <xs:element name="Email" type="xs:string"/>
+      <xs:element name="InternshipSearch" type="InternshipSearchType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="InternshipSearchType">
+    <xs:sequence>
+      <xs:element name="Duration">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Lang" type="LangText" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Period">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Lang" type="LangText" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProfessionalSummaryType">
+    <xs:sequence>
+      <xs:element name="Text">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Lang" type="LangText" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EducationType">
+    <xs:sequence>
+      <xs:element name="Degree" type="DegreeType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DegreeType">
+    <xs:sequence>
+      <xs:element name="Title">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Lang" type="LangText" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Institution">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Lang" type="LangText" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Type" minOccurs="0"> <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Lang" type="LangText" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Years" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="WorkExperienceType">
+    <xs:sequence>
+      <xs:element name="Job" type="JobType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="JobType">
+    <xs:sequence>
+      <xs:element name="Title">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Lang" type="LangText" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Company" type="xs:string"/>
+      <xs:element name="Years" type="xs:string"/>
+      <xs:element name="Responsibilities" type="ResponsibilitiesType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ResponsibilitiesType">
+    <xs:sequence>
+      <xs:element name="Task" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Lang" type="LangText" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TechnicalSkillsType">
+    <xs:sequence>
+      <xs:element name="BusinessIntelligence" type="SkillCategoryType"/>
+      <xs:element name="ProgrammingLanguages" type="SkillCategoryType"/>
+      <xs:element name="DataManagement" type="SkillCategoryType"/>
+      <xs:element name="SoftwareTools" type="SkillCategoryType"/>
+      <xs:element name="OperatingSystems" type="SkillCategoryType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SkillCategoryType">
+    <xs:sequence>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="Tool" type="xs:string"/>
+        <xs:element name="Language" type="xs:string"/>
+        <xs:element name="Skill" type="xs:string"/>
+        <xs:element name="System" type="xs:string"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LanguagesType">
+    <xs:sequence>
+      <xs:element name="Language" type="UserLanguageType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UserLanguageType">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string"/>
+      <xs:element name="Level" type="xs:string"/>
+      <xs:element name="Certification" type="xs:string" minOccurs="0"/> </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProjectsType">
+    <xs:sequence>
+      <xs:element name="Project" type="ProjectType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProjectType">
+    <xs:sequence>
+      <xs:element name="Title">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Lang" type="LangText" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Year" type="xs:gYear"/> <xs:element name="Description">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Lang" type="LangText" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Link" type="xs:anyURI" minOccurs="0"/> <xs:element name="LoginInfo" minOccurs="0"> <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Lang" type="LangText" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="image" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+</xs:schema>
