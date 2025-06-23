@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output method="html" encoding="UTF-8" indent="yes"/>
+    <xsl:output method="xml" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
+             doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
+             encoding="UTF-8" indent="yes"/>
+
 
     <xsl:template match="/">
-        <html vocab="https://schema.org/"> <head>
+        <html xmlns="http://www.w3.org/1999/xhtml" vocab="https://schema.org/"> <head>
                 <title>Portfolio - <xsl:value-of select="CV/PersonalInfo/Name"/></title>
                 <meta charset="UTF-8"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -15,7 +18,7 @@
                 <link rel="schema" type="application/xml" href="portefolio.xsd" title="XSD Schema for this portfolio" />
 
                 <style>
-                    body {
+                    body {  
                         font-family: Arial, sans-serif;
                         background-color: #f6f8fa;
                         color: #2e2e2e;
