@@ -461,7 +461,7 @@
                         <a href="portfolio.rdf" target="_blank" rel="noopener noreferrer">
                             <span data-lang-en="RDF Version" data-lang-fr="Version RDF" data-lang-zh="RDF版本">Version RDF</span>
                         </a> |
-                        <a href="cv-schema.rdfs" target="_blank" rel="noopener noreferrer">
+                        <a href="portfolio.rdfs" target="_blank" rel="noopener noreferrer">
                             <span data-lang-en="RDFS Schema" data-lang-fr="Schéma RDFS" data-lang-zh="RDFS模式">Schéma RDFS</span>
                         </a> |
                         <a href="portefolio.xsd" target="_blank" rel="noopener noreferrer">
