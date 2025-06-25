@@ -1,178 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output method="xml" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
-                doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
-                encoding="UTF-8" indent="yes"/>
+    <xsl:output method="html" encoding="UTF-8" indent="yes" doctype-system="about:legacy-compat" />
+
 
     <xsl:template match="/">
         <html xmlns="http://www.w3.org/1999/xhtml" vocab="https://schema.org/">
             <head>
                 <title>Portfolio - <xsl:value-of select="CV/PersonalInfo/Name"/></title>
-                <meta charset="UTF-8"/>
+                
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <link rel="stylesheet" type="text/css" href="portfolio.css"/>
+                <script src="lang.js"/>
+
+
 
                 <link rel="alternate" type="application/rdf+xml" href="portfolio.rdf" title="RDF representation of this portfolio" />
                 <link rel="schema.rdfs" type="application/rdf+xml" href="cv-schema.rdfs" title="RDFS Schema for this portfolio" />
                 <link rel="alternate" type="application/xml" href="portefolio.xml" title="Original XML data for this portfolio" />
                 <link rel="schema" type="application/xml" href="portefolio.xsd" title="XSD Schema for this portfolio" />
-
-                <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                        background-color: #f6f8fa;
-                        color: #2e2e2e;
-                        margin: 0;
-                        padding: 0;
-                    }
-                    header {
-                        background-color: #002855;
-                        color: white;
-                        padding: 20px;
-                        text-align: center;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    .profile-photo {
-                        width: 120px;
-                        height: 120px;
-                        border-radius: 50%;
-                        object-fit: cover;
-                        border: 3px solid white;
-                        margin-bottom: 15px;
-                        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-                    }
-
-                    .profile-photo:hover {
-                        transform: scale(1.5);
-                        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-                    }
-                    section {
-                        padding: 20px 40px;
-                        border-bottom: 1px solid #ddd;
-                        background-color: white;
-                    }
-                    h2 {
-                        color: #002855;
-                        border-bottom: 2px solid #002855;
-                        padding-bottom: 5px;
-                    }
-                    ul {
-                        padding-left: 20px;
-                    }
-                    .project {
-                        margin-bottom: 30px;
-                        padding-bottom: 15px;
-                        border-bottom: 1px dashed #eee;
-                        display: block;
-                        text-align: left;
-                    }
-                    .project:last-child {
-                        border-bottom: none;
-                    }
-                    /* NOUVELLES RÈGLES POUR LES IMAGES DE PROJET */
-                    .project-image {
-                        width: 300px;
-                        height: 200px;
-                        object-fit: contain;
-                        display: block;
-                        margin: 15px 0 10px 0;
-                        padding: 5px;
-                        border: 3px solid #002855;
-                        border-radius: 8px;
-                        background-color: #f0f2f5;
-                        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-                        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-                    }
-
-                    .project-image:hover {
-                        transform: scale(1.25);
-                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-                    }
-
-                    /* Ajustements pour les titres et descriptions des projets */
-                    .project strong {
-                        display: block;
-                        margin-bottom: 5px;
-                    }
-                    .project p {
-                        margin-top: 5px;
-                    }
-                    .project ul {
-                        padding-left: 20px;
-                    }
-
-                    .contact {
-                        margin-top: 5px;
-                        font-size: 0.95em;
-                        color: #ccc;
-                    }
-                    .lang-switcher {
-                        text-align: right;
-                        padding: 10px 40px;
-                        background-color: #e9eef3;
-                    }
-                    .lang-switcher button {
-                        margin-left: 10px;
-                        background-color: #002855;
-                        color: white;
-                        border: none;
-                        padding: 8px 12px;
-                        border-radius: 4px;
-                        cursor: pointer;
-                    }
-                    .lang-switcher button:hover {
-                        background-color: #004080;
-                    }
-                    /* Style pour les contenus multilingues */
-                    .lang-content {
-                        display: none;
-                    }
-                    .lang-content.active {
-                        display: inline;
-                    }
-                    /* Style pour le footer */
-                    footer {
-                        background-color: #002855;
-                        color: white;
-                        text-align: center;
-                        padding: 20px;
-                        margin-top: 30px;
-                        font-size: 0.9em;
-                    }
-                    footer a {
-                        color: #a0d6ff;
-                        text-decoration: none;
-                    }
-                    footer a:hover {
-                        text-decoration: underline;
-                    }
-
-                    /* Style pour la vidéo YouTube avec dimensions réduites */
-                    .video-container {
-                        position: relative;
-                        width: 400px; /* Taille fixe plus petite */
-                        padding-bottom: 225px; /* 400px * 9 / 16 = 225px pour 16:9 */
-                        height: 0;
-                        overflow: hidden;
-                        background: #000;
-                        border: 3px solid #002855;
-                        border-radius: 8px;
-                        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-                    }
-
-                    .video-container iframe {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                    }
-
-
-                </style>
             </head>
             <body>
 
@@ -237,7 +83,6 @@
                                         <span class="lang-content" data-lang-id="{@id}" property="credentialCategory"><xsl:value-of select="."/></span>
                                     </xsl:for-each>
                                 </em>
-                                —
                             </xsl:if>
                             <span property="startDate" content="{substring(Years, 1, 4)}"></span>
                             <span property="endDate" content="{substring(Years, 8, 4)}"></span>
@@ -294,7 +139,7 @@
                             <span property="knowsAbout"><xsl:value-of select="."/></span><xsl:if test="position() != last()">, </xsl:if>
                         </xsl:for-each>
                     </p>
-                    <p><strong><span data-lang-en="Software &amp; Tools" data-lang-fr="Logiciels &amp; Outils" data-lang-zh="软件与工具">Software &amp; Tools</span>:</strong>
+                    <p><strong><span data-lang-en="Software &amp; Tools : " data-lang-fr="Logiciels &amp; Outils : " data-lang-zh="软件与工具 : "></span></strong>
                         <xsl:for-each select="CV/TechnicalSkills/SoftwareTools/Tool">
                             <span property="knowsAbout"><xsl:value-of select="."/></span><xsl:if test="position() != last()">, </xsl:if>
                         </xsl:for-each>
@@ -359,93 +204,71 @@
                         </div>
                     </xsl:for-each>
 
-        <xsl:for-each select="CV/VideoHobby">
-        <div class="project" typeof="VideoObject">
-            <h2>
-                <xsl:for-each select="Lang">
-                    <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
-                </xsl:for-each>
-            </h2>
-            <span property="author" typeof="Organization">
-                <span property="name">
-                    <xsl:value-of select="@author"/>
+
+<xsl:for-each select="CV/VideoHobby">
+    <div class="project" typeof="VideoObject">
+        <h2>
+            <xsl:for-each select="Lang">
+                <span class="lang-content" data-lang-id="{@id}">
+                    <xsl:value-of select="normalize-space(.)"/>
                 </span>
+            </xsl:for-each>
+        </h2>
+
+        <span property="author" typeof="Organization">
+            <span property="name">
+                <xsl:value-of select="@author"/>
             </span>
-            <div class="video-container">
-                <xsl:for-each select="Lang">
-                    <xsl:variable name="videoUrl" select="@URL"/>
+        </span>
+
+        <div class="video-container">
+            <xsl:for-each select="Lang">
+                <div class="lang-content" data-lang-id="{@id}">
+                    <!-- Extraction de l'ID de la vidéo -->
+                    <xsl:variable name="url" select="@URL"/>
                     <xsl:variable name="videoId">
                         <xsl:choose>
-                            <xsl:when test="contains($videoUrl, 'watch?v=')">
-                                <xsl:value-of select="substring-after($videoUrl, 'watch?v=')"/>
+                            <xsl:when test="contains($url, 'watch?v=')">
+                                <xsl:value-of select="substring-after($url, 'watch?v=')"/>
                             </xsl:when>
-                            <xsl:when test="contains($videoUrl, 'youtu.be/')">
-                                <xsl:value-of select="substring-after($videoUrl, 'youtu.be/')"/>
+                            <xsl:when test="contains($url, 'youtu.be/')">
+                                <xsl:value-of select="substring-after($url, 'youtu.be/')"/>
                             </xsl:when>
-                            <xsl:when test="contains($videoUrl, 'embed/')">
-                                <xsl:value-of select="substring-after($videoUrl, 'embed/')"/>
+                            <xsl:when test="contains($url, 'embed/')">
+                                <xsl:value-of select="substring-after($url, 'embed/')"/>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="substring-after($videoUrl, 'youtube.com/')"/>
+                                <xsl:value-of select="$url"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:variable>
-                    <span class="lang-content" data-lang-id="{@id}">
-                        <iframe width="560" height="315"
-                                src="https://www.youtube.com/embed/{$videoId}"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen="allowfullscreen"
-                                property="embedUrl"
-                                loading="lazy"> </iframe>
-                        <p property="description">
-                            <xsl:value-of select="Description"/>
-                        </p>
-                        <link property="url" href="{$videoUrl}" />
-                    </span>
-                </xsl:for-each>
-            </div>
+
+                    <!-- Iframe par langue -->
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/{$videoId}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen="allowfullscreen"
+                            property="embedUrl"
+                            loading="lazy">
+                    </iframe>
+
+                    <!-- Description facultative -->
+                    <p property="description">
+                        <xsl:value-of select="normalize-space(.)"/>
+                    </p>
+
+                    <!-- Lien direct vers la vidéo -->
+                    <link property="url" href="{$url}"/>
+                </div>
+            </xsl:for-each>
         </div>
-    </xsl:for-each>
+    </div>
+</xsl:for-each>
+
+
 
 
                 </section>
-
-                <script>
-                    function getPreferredLang() {
-                        return localStorage.getItem('preferredLang') || 'en'; // 'en' est la langue par défaut
-                    }
-
-                    function applyLangOnLoad() {
-                        const lang = getPreferredLang();
-                        setLang(lang);
-                    }
-
-                    function setLang(lang) {
-                        document.querySelectorAll('[data-lang-en]').forEach(el => {
-                            const value = el.getAttribute('data-lang-' + lang);
-                            if (value) {
-                                el.textContent = value;
-                            } else {
-                                // Fallback à l'anglais si la traduction n'est pas disponible pour cette langue
-                                el.textContent = el.getAttribute('data-lang-en');
-                            }
-                        });
-
-                        document.querySelectorAll('.lang-content').forEach(el => {
-                            if (el.getAttribute('data-lang-id') === lang) {
-                                el.classList.add('active'); // Afficher la langue sélectionnée
-                            } else {
-                                el.classList.remove('active'); // Masquer les autres langues
-                            }
-                        });
-
-                        localStorage.setItem('preferredLang', lang);
-                    }
-
-                    window.onload = applyLangOnLoad;
-                </script>
-
                 <footer>
                     <p typeof="Person">
                         <span property="name"><xsl:value-of select="CV/PersonalInfo/Name"/></span> |
@@ -460,6 +283,9 @@
                         </a> |
                         <a href="portfolio.rdf" target="_blank" rel="noopener noreferrer">
                             <span data-lang-en="RDF Version" data-lang-fr="Version RDF" data-lang-zh="RDF版本">Version RDF</span>
+                        </a> |
+                        <a href="cv-schema.rdfs" target="_blank" rel="noopener noreferrer">
+                            <span data-lang-en="RDFS Schema" data-lang-fr="Schéma RDFS" data-lang-zh="RDFS模式">Schéma RDFS</span>
                         </a> |
                         <a href="portefolio.xsd" target="_blank" rel="noopener noreferrer">
                             <span data-lang-en="XSD Schema" data-lang-fr="Schéma XSD" data-lang-zh="XSD模式">Schéma XSD</span>
