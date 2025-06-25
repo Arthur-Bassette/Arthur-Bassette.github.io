@@ -184,7 +184,7 @@
                 </div>
 
                 <header typeof="Person" about="#me">
-                    <img property="image" src="{CV/PersonalInfo/Name/@image}" alt="Ma photo" class="profile-photo"/>
+                    <img property="image" src="{CV/PersonalInfo/Name/@image}" alt="Ma photo" class="profile-photo" loading="lazy"/>
                     <h1 property="name"><xsl:value-of select="CV/PersonalInfo/Name"/></h1>
                     <div class="contact">
                         <div><span property="telephone"><xsl:value-of select="CV/PersonalInfo/Phone"/></span></div>
@@ -333,7 +333,7 @@
                             </strong>
                             (<span property="datePublished"><xsl:value-of select="Year"/></span>)
                             <xsl:if test="@image">
-                                <img property="image" src="{@image}" alt="Image du projet" class="project-image"/>
+                                <img property="image" src="{@image}" alt="Image du projet" class="project-image" loading="lazy"/>
                             </xsl:if>
                             <p>
                                 <xsl:for-each select="Description/Lang">
@@ -359,56 +359,54 @@
                         </div>
                     </xsl:for-each>
 
-    <xsl:for-each select="CV/VideoHobby">
-    <div class="project" typeof="VideoObject">
-        <h2>
-            <xsl:for-each select="Lang">
-                <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
-            </xsl:for-each>
-        </h2>
-        <span property="author" typeof="Organization">
-            <span property="name">
-                <xsl:value-of select="@author"/>
-            </span>
-        </span>
-        <div class="video-container">
-            <xsl:for-each select="Lang">
-                <xsl:variable name="videoUrl" select="@URL"/>
-                <!-- Extraction correcte de l'ID selon différents formats -->
-                <xsl:variable name="videoId">
-                    <xsl:choose>
-                        <xsl:when test="contains($videoUrl, 'watch?v=')">
-                            <xsl:value-of select="substring-after($videoUrl, 'watch?v=')"/>
-                        </xsl:when>
-                        <xsl:when test="contains($videoUrl, 'youtu.be/')">
-                            <xsl:value-of select="substring-after($videoUrl, 'youtu.be/')"/>
-                        </xsl:when>
-                        <xsl:when test="contains($videoUrl, 'embed/')">
-                            <xsl:value-of select="substring-after($videoUrl, 'embed/')"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <!-- Fallback: prend tout après le dernier slash -->
-                            <xsl:value-of select="substring-after($videoUrl, 'youtube.com/')"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:variable>
-                <span class="lang-content" data-lang-id="{@id}">
-                    <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/{$videoId}"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen="allowfullscreen"
-                            property="embedUrl">
-                    </iframe>
-                    <p property="description">
-                        <xsl:value-of select="Description"/>
-                    </p>
-                    <link property="url" href="{$videoUrl}" />
+        <xsl:for-each select="CV/VideoHobby">
+        <div class="project" typeof="VideoObject">
+            <h2>
+                <xsl:for-each select="Lang">
+                    <span class="lang-content" data-lang-id="{@id}"><xsl:value-of select="."/></span>
+                </xsl:for-each>
+            </h2>
+            <span property="author" typeof="Organization">
+                <span property="name">
+                    <xsl:value-of select="@author"/>
                 </span>
-            </xsl:for-each>
+            </span>
+            <div class="video-container">
+                <xsl:for-each select="Lang">
+                    <xsl:variable name="videoUrl" select="@URL"/>
+                    <xsl:variable name="videoId">
+                        <xsl:choose>
+                            <xsl:when test="contains($videoUrl, 'watch?v=')">
+                                <xsl:value-of select="substring-after($videoUrl, 'watch?v=')"/>
+                            </xsl:when>
+                            <xsl:when test="contains($videoUrl, 'youtu.be/')">
+                                <xsl:value-of select="substring-after($videoUrl, 'youtu.be/')"/>
+                            </xsl:when>
+                            <xsl:when test="contains($videoUrl, 'embed/')">
+                                <xsl:value-of select="substring-after($videoUrl, 'embed/')"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="substring-after($videoUrl, 'youtube.com/')"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <span class="lang-content" data-lang-id="{@id}">
+                        <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/{$videoId}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen="allowfullscreen"
+                                property="embedUrl"
+                                loading="lazy"> </iframe>
+                        <p property="description">
+                            <xsl:value-of select="Description"/>
+                        </p>
+                        <link property="url" href="{$videoUrl}" />
+                    </span>
+                </xsl:for-each>
+            </div>
         </div>
-    </div>
-</xsl:for-each>
+    </xsl:for-each>
 
 
                 </section>
