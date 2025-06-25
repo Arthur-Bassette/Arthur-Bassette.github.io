@@ -6,6 +6,7 @@
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="id" type="xs:string" use="required"/>
+        <xs:attribute name="URL" type="xs:string" use="optional"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -20,6 +21,7 @@
         <xs:element name="TechnicalSkills" type="TechnicalSkillsType"/>
         <xs:element name="Languages" type="LanguagesType"/>
         <xs:element name="Projects" type="ProjectsType"/>
+        <xs:element name="VideoHobby" type="VideoHobbyType"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -202,5 +204,12 @@
     </xs:sequence>
     <xs:attribute name="image" type="xs:string" use="optional"/>
   </xs:complexType>
+
+    <xs:complexType name="VideoHobbyType" >
+      <xs:sequence>
+         <xs:element name="Lang" type="LangText" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="author" type="xs:string" use="required"/>
+    </xs:complexType>
 
 </xs:schema>
