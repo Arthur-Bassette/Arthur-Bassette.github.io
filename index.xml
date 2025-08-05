@@ -295,18 +295,6 @@
       </Description>
     </Project>
   </Projects>
-
-   <VideoHobby author="Nintendo,The Pokemon Compagny">
-    <Lang id="en" URL="https://www.youtube.com/watch?v=tezs2FsIxgA">
-      Trailer of a game that I'm passionate about
-    </Lang>
-    <Lang id="fr" URL="https://www.youtube.com/watch?v=stETPQFli0s">
-      Le trailer d'une jeu qui me passionne
-    </Lang>
-    <Lang id="zh" URL="https://www.youtube.com/watch?v=k8NC-SzItbw"> 
-      我热衷的游戏预告片
-    </Lang>
-  </VideoHobby>
-
+    
 </CV>
 
