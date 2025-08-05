@@ -163,6 +163,21 @@
   </Languages>
 
   <Projects>
+
+    <Project image="FLP-screen.png">
+      <Title>
+        <Lang id="en">Facility Location Problem – Combinatorial Optimization </Lang>
+        <Lang id="fr">Problème de localisation des centres - Optimisation Combinatoire </Lang>
+        <Lang id="zh">设施选址问题——组合优化。</Lang>
+      </Title>
+      <Year>2025</Year>
+      <Description>
+        <Lang id="en">Solving the combinatorial optimization problem FLP using problem modeling, greedy algorithms, and heuristics.</Lang>
+        <Lang id="fr">Résolution du problème d'optimisation combinatoire FLP à l'aide de modélisation de problèmes, d'algorithmes gloutons et d'euristhiques.</Lang>
+        <Lang id="zh">通过问题建模、贪心算法和启发式方法求解FLP组合优化问题。</Lang>
+      </Description>
+    </Project>
+      
     <Project image="web_app_movie.png">
       <Title>
         <Lang id="en">Web Application About Movies and Shows</Lang>
@@ -181,20 +196,6 @@
         <Lang id="fr">Identifiant : tomarthour@gmail.com, Mot de passe : ebzd</Lang>
         <Lang id="zh">登录：tomarthour@gmail.com，密码：ebzd</Lang>
       </LoginInfo>
-    </Project>
-
-      <Project image="web_project.png">
-      <Title>
-        <Lang id="en">Facility Location Problem – Combinatorial Optimization </Lang>
-        <Lang id="fr">Problème de localisation des centres - Optimisation Combinatoire </Lang>
-        <Lang id="zh">设施选址问题——组合优化。</Lang>
-      </Title>
-      <Year>2025</Year>
-      <Description>
-        <Lang id="en">Solving the combinatorial optimization problem FLP using problem modeling, greedy algorithms, and heuristics.</Lang>
-        <Lang id="fr">Résolution du problème d'optimisation combinatoire FLP à l'aide de modélisation de problèmes, d'algorithmes gloutons et d'euristhiques.</Lang>
-        <Lang id="zh">通过问题建模、贪心算法和启发式方法求解FLP组合优化问题。</Lang>
-      </Description>
     </Project>
 
     <Project image="web_project.png">
