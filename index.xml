@@ -183,13 +183,27 @@
       </LoginInfo>
     </Project>
 
+      <Project image="web_project.png">
+      <Title>
+        <Lang id="en">Facility Location Problem – Combinatorial Optimization </Lang>
+        <Lang id="fr">Problème de localisation des centres - Optimisation Combinatoire </Lang>
+        <Lang id="zh">设施选址问题——组合优化。</Lang>
+      </Title>
+      <Year>2025</Year>
+      <Description>
+        <Lang id="en">Solving the combinatorial optimization problem FLP using problem modeling, greedy algorithms, and heuristics.</Lang>
+        <Lang id="fr">Résolution du problème d'optimisation combinatoire FLP à l'aide de modélisation de problèmes, d'algorithmes gloutons et d'euristhiques.</Lang>
+        <Lang id="zh">通过问题建模、贪心算法和启发式方法求解FLP组合优化问题。</Lang>
+      </Description>
+    </Project>
+
     <Project image="web_project.png">
       <Title>
         <Lang id="en">Train Simulator</Lang>
         <Lang id="fr">Simulateur de Train</Lang>
         <Lang id="zh">火车模拟器</Lang>
       </Title>
-      <Year>2023</Year>
+      <Year>2024</Year>
       <Description>
         <Lang id="en">Developed a top-down game in JavaScript to place blocks on a map and simulate train movement.</Lang>
         <Lang id="fr">Création d’un jeu en vue de dessus avec JavaScript permettant de placer des blocs sur une carte et simuler le déplacement de trains.</Lang>
